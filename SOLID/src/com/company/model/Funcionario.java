@@ -32,4 +32,12 @@ public class Funcionario {
     public LocalDate getDataUltimoReajuste() {
         return dataUltimoReajuste;
     }
+
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void promover(Cargo novoCargo) {
+        this.cargo = novoCargo;
+    }
 }

@@ -1,8 +1,32 @@
 package com.company.model;
 
 public enum Cargo {
-    ASSISTENTE,
-    ANALISTA,
-    ESPECIALISTA,
-    GERENTE
+
+    ASSISTENTE {
+        @Override
+        public Cargo proximoCargo() {
+            return ANALISTA;
+        }
+    },
+    ANALISTA{
+        @Override
+        public Cargo proximoCargo() {
+            return ESPECIALISTA;
+        }
+    },
+    ESPECIALISTA{
+        @Override
+        public Cargo proximoCargo() {
+            return GERENTE;
+        }
+    },
+    GERENTE{
+        @Override
+        public Cargo proximoCargo() {
+            return GERENTE;
+        }
+    };
+
+    public abstract Cargo proximoCargo();
+
 }
